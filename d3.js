@@ -1,13 +1,13 @@
 // Define SVG area dimensions
-var svgWidth = 960;
-var svgHeight = 660;
+var svgWidth = 1500;
+var svgHeight = 400;
 
 // Define the chart's margins as an object
 var chartMargin = {
   top: 30,
-  right: 30,
+  right: 40,
   bottom: 30,
-  left: 30
+  left: 40
 };
 
 // Define dimensions of the chart area
@@ -40,17 +40,18 @@ d3.csv("volcanos.csv", function(error, volcanos) {
     data.explosive = +data.explosive;
   });
 
-  var barSpacing = 10; // desired space between each bar
-  var scaleY = 10; // 10x scale on rect height
+  var barSpacing = 7; // desired space between each bar
+  var scaleY = 100; // 10x scale on rect height
 
   // @TODO
   // Create a 'barWidth' variable so that the bar chart spans the entire chartWidth.
-  var barWidth = (chartWidth - (barSpacing * (volcanos.length - 1))) / volcanos.length;
+  var barWidth = Math.abs((chartWidth - (barSpacing * (volcanos.length - 1)))) / volcanos.length;
 
   // Create code to build the bar chart using the tvData.
   chartGroup.selectAll(".bar")
     .data(volcanos)
     .enter()
+    .append("rect")
     .classed("bar", true)
     .attr("width", d => barWidth)
     .attr("height", d => d.explosive * scaleY)
