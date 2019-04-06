@@ -51,7 +51,6 @@ d3.csv("volcanos.csv", function(error, volcanos) {
   chartGroup.selectAll(".bar")
     .data(volcanos)
     .enter()
-    .append("rect")
     .classed("bar", true)
     .attr("width", d => barWidth)
     .attr("height", d => d.explosive * scaleY)
