@@ -1,77 +1,52 @@
-import numpy as np
+import pandas as pd
 
-import sqlalchemy
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, func
+from flask import (
+    Flask,
+    render_template,
+    jsonify)
 
-from flask import Flask, jsonify
+from flask_sqlalchemy import SQLAlchemy
 
-
-#################################################
-# Database Setup
-#################################################
-engine = create_engine("sqlite:///Volcanos.sqlite.db")
-
-# reflect an existing database into a new model
-Base = automap_base()
-# reflect the tables
-Base.prepare(engine, reflect=True)
-
-# Save reference to the table
-Passenger = Base.classes.passenger
-
-# Create our session (link) from Python to the DB
-session = Session(engine)
-
-#################################################
-# Flask Setup
-#################################################
 app = Flask(__name__)
 
+# The database URI
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///db/Volcanos.sqlite.db"
 
-#################################################
-# Flask Routes
-#################################################
+db = SQLAlchemy(app)
+
+
+# Create our database model
+class Volcanos(db.Model):
+    __tablename__ = 'Volcano_Erruptions'
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String)
+    latitude = db.Column(db.Decimal)
+    longitude = db.Column(db.Decimal)
+    active = db.Column(db.String)
+    explosive = db.Column(db.Integer)
+    startyear = db.Column(db.Integer)
+    startmonth = db.Column(db.Integer)
+
+
+
+    def __repr__(self):
+        return '<Volcanos %r>' % (self.name)
+
+
+# Create database tables
+@app.before_first_request
+def setup():
+    # Recreate database each time for demo
+    # db.drop_all()
+    db.create_all()
+
 
 @app.route("/")
-def welcome():
-    """List all available api routes."""
-    return (
-        f"Available Routes:<br/>"
-        f"/api/v1.0/names<br/>"
-        f"/api/v1.0/passengers"
-    )
+def home():
+    """Render Home Page."""
+    return render_template("index.html")
 
-
-@app.route("/api/v1.0/names")
-def names():
-    """Return a list of all passenger names"""
-    # Query all passengers
-    results = session.query(Passenger.name).all()
-
-    # Convert list of tuples into normal list
-    all_names = list(np.ravel(results))
-
-    return jsonify(all_names)
-
-
-@app.route("/api/v1.0/passengers")
-def passengers():
-    """Return a list of passenger data including the name, age, and sex of each passenger"""
-    # Query all passengers
-    results = session.query(Passenger).all()
-
-    # Create a dictionary from the row data and append to a list of all_passengers
-    all_passengers = []
-    for passenger in results:
-        passenger_dict = {}
-        passenger_dict["name"] = passenger.name
-        passenger_dict["age"] = passenger.age
-        passenger_dict["sex"] = passenger.sex
-        all_passengers.append(passenger_dict)
-
-    return jsonify(all_passengers)
 
 
 if __name__ == '__main__':
