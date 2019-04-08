@@ -27,7 +27,7 @@ var chartGroup = svg.append("g")
   .attr("transform", `translate(${chartMargin.left}, ${chartMargin.top})`);
 
 // Load data from hours-of-tv-watched.csv
-d3.csv("volcanos.csv", function(error, volcanos) {
+d3.csv("volcanos2018.csv", function(error, volcanos) {
 
   // Log an error if one exists
   if (error) return console.warn(error);
@@ -37,7 +37,7 @@ d3.csv("volcanos.csv", function(error, volcanos) {
 
   // Cast the hours value to a number for each piece of tvData
   volcanos.forEach(function(data) {
-    data.explosive = +data.explosive;
+    data.country = +data.country;
   });
 
   var barSpacing = 7; // desired space between each bar
@@ -54,7 +54,7 @@ d3.csv("volcanos.csv", function(error, volcanos) {
     .append("rect")
     .classed("bar", true)
     .attr("width", d => barWidth)
-    .attr("height", d => d.explosive * scaleY)
+    .attr("height", d => d.country * scaleY)
     .attr("x", (d, i) => i * (barWidth + barSpacing))
-    .attr("y", d => chartHeight - d.explosive * scaleY);
+    .attr("y", d => chartHeight - d.country * scaleY);
 });
