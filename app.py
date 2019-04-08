@@ -94,7 +94,7 @@ def form():
 def volcano_scatter_data():
     """Return volcano name and volcano explosive/startyear"""
 
-    # Query for the top 10 emoji data
+    # Query for the volcano data
     results = db.session.query(volcano_scatter_data.name, volcano_scatter_data.explosive, volcano_scatter_data.startyear).\
         order_by(volcano_scatter_data.startyear.desc()).
 
