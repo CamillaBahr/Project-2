@@ -54,8 +54,8 @@ def volcanos_explosive_data():
     """Return volcano explosive rating and volcano name"""
 
     # Query for the volcano name/explosive data
-    results = db.session.query(Volcano_Erruptions.name, Volcano_Erruptions.explosive).\
-        order_by(Volcano_Erruptions.explosive.desc())
+    results = db.session.query(Volcanos.name, Volcanos.explosive).\
+        order_by(Volcanos.explosive.desc())
     df = pd.DataFrame(results, columns=['name', 'explosive'])
 
     # Format the data for Plotly
@@ -66,37 +66,24 @@ def volcanos_explosive_data():
     }
     return jsonify(plot_trace)
 
-@app.route("/volcanos_explosive")
-def volcanos_explosive_data():
-    """Return volcano explosive rating and volcano name"""
-
-    # Query for the volcano name/explosive data
-    results = db.session.query(Volcano_Erruptions.name, Volcano_Erruptions.explosive).\
-        order_by(Volcano_Erruptions.explosive.desc())
-    df = pd.DataFrame(results, columns=['name', 'explosive'])
-
-    # Format the data for Plotly
-    plot_trace = {
-        "x": df["name"].values.tolist(),
-        "y": df["explosive"].values.tolist(),
-        "type": "bar"
-    }
-    return jsonify(plot_trace)
-
- @app.route('/form')
-def form():
+@app.route('/Mapping')
+def Mapping():
   longitude = request.args.get('longitude', type=float)
   latitude = request.args.get('latitude', type=float)
 
-  return render_template("Visualization-AG.html", longitude=longitude, latitude=latitude)   
+  return render_template("Visualization-AG.html")
 
 @app.route("/scatter")
+def scatter():
+    """Render Scatter Plot Page."""
+    return render_template("scatterplott.html")
+
 def volcano_scatter_data():
     """Return volcano name and volcano explosive/startyear"""
 
     # Query for the volcano data
-    results = db.session.query(volcano_scatter_data.name, volcano_scatter_data.explosive, volcano_scatter_data.startyear).\
-        order_by(volcano_scatter_data.startyear.desc()).
+    results = db.session.query(Volcanos.name, Volcanos.explosive, Volcanos.startyear).\
+        order_by(Volcanos.startyear.desc())
 
     # Create lists from the query results
     volcano_names = [result[0] for result in results]
