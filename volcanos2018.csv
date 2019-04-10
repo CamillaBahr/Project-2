@@ -1,0 +1,34 @@
+id,name,latitude,longitude,active,explosive,startyear,country
+1,Planchon-Peteroa,-35.223,-70.568,TRUE,1,2018,Chile
+2,Merapi,-7.54,110.446,TRUE,3,2018,Indonesia
+3,Karangetang,2.781,125.407,FALSE,1,2018,Indonesia
+4,Karangetang,2.781,125.407,TRUE,2,2018,Indonesia
+5,Rincon de la Vieja,10.83,-85.324,TRUE,1,2018,Costa Rica
+6,Copahue,-37.856,-71.183,FALSE,2,2018,Argentina
+7,Mayon,13.257,123.685,TRUE,2,2018,Philippines
+8,Kuchinoerabujima,30.443,130.217,TRUE,3,2018,Japan
+9,Telica,12.606,-86.84,FALSE,1,2018,Nicaragua
+10,Kirishimayama,31.934,130.862,FALSE,3,2018,Japan
+11,Kusatsu-Shiranesan,36.618,138.528,FALSE,1,2018,Japan
+12,San Cristobal,12.702,-87.004,FALSE,1,2018,Nicaragua
+13,"Fournaise, Piton de la",-21.244,55.708,FALSE,0,2018,Réunion (France)
+14,Nishinoshima,27.247,140.874,FALSE,1,2018,Japan
+15,Ketoi,47.35,152.475,FALSE,1,2018,Russia
+16,Sarychev Peak,48.092,153.2,FALSE,2,2018,Russia
+17,Alaid,50.861,155.565,FALSE,1,2018,Russia
+18,San Miguel,13.434,-88.269,FALSE,1,2018,El Salvador
+19,Karymsky,54.049,159.443,FALSE,3,2018,Russia
+20,Semisopochnoi,51.93,179.58,FALSE,1,2018,USA
+21,Great Sitkin,52.076,-176.13,FALSE,1,2018,USA
+22,Soputan,1.112,124.737,FALSE,3,2018,Indonesia
+23,Gamalama,0.8,127.33,FALSE,1,2018,Indonesia
+24,Dieng Volcanic Complex,-7.2,109.879,FALSE,1,2018,Indonesia
+26,Kadovar,-3.608,144.588,TRUE,2,2018,Papua New Guinea
+28,Ulawun,-5.05,151.33,FALSE,2,2018,Papua New Guinea
+29,"Negra, Sierra",-0.83,-91.17,FALSE,2,2018,Ecuador
+30,Barren Island,12.278,93.858,TRUE,1,2018,India
+31,Fernandina,-0.37,-91.55,FALSE,1,2018,Ecuador
+33,Sangay,-2.005,-78.341,FALSE,1,2018,Ecuador
+34,Veniaminof,56.17,-159.38,FALSE,1,2018,USA
+35,Kerinci,-1.697,101.264,FALSE,1,2018,Indonesia
+36,Krakatau,-6.102,105.423,TRUE,3,2018,Indonesia
