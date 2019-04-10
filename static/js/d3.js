@@ -24,8 +24,10 @@ var svg = d3.select("map")
 var chartGroup = svg.append("g")
   .attr("transform", `translate(${chartMargin.left}, ${chartMargin.top})`);
 
+var url = "/volcanos_explosive";
+
 // Load data from hours-of-tv-watched.csv
-d3.csv("data/volcanos2018.csv", function(error, volcanos) {
+d3.json(url).then(function(error, volcanos) {
   if (error) throw error;
 
   console.log(volcanos);

@@ -50,18 +50,25 @@ def home():
     return render_template("index.html")
 
 @app.route("/volcanos_explosive")
+def barplot():
+    """Render Bar Plot Page."""
+    return render_template("Interactive.html")
+
 def volcanos_explosive_data():
     """Return volcano explosive rating and volcano name"""
 
     # Query for the volcano name/explosive data
-    results = db.session.query(Volcanos.name, Volcanos.explosive).\
-        order_by(Volcanos.explosive.desc())
-    df = pd.DataFrame(results, columns=['name', 'explosive'])
+    results = db.session.query(Volcanos.name, Volcanos.explosive).group_by(Volcanos.explosive).all()
+    
+    name = [result[0] for result in results]
+    explosivity = [result[1] for result in results]
+
+    # df = pd.DataFrame(results, columns=['name', 'explosive'])
 
     # Format the data for Plotly
     plot_trace = {
-        "x": df["name"].values.tolist(),
-        "y": df["explosive"].values.tolist(),
+        "x": name,
+        "y": explosivity,
         "type": "bar"
     }
     return jsonify(plot_trace)
