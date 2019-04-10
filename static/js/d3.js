@@ -1,4 +1,4 @@
-// Define SVG area dimensions
+3// Define SVG area dimensions
 var svgWidth = 960;
 var svgHeight = 660;
 
@@ -35,7 +35,7 @@ d3.csv("volcanos2018.csv", function(error, volcanos) {
     //d.country = +d.country;
   //});
 
-  var volcanosByCountry = d3.nest()
+var volcanosByCountry = d3.nest()
   .key(function(d) { return d.country; })
   .rollup(function(v) { return v.length; })
   .entries(volcanos);
