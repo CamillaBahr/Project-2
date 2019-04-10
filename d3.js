@@ -64,7 +64,7 @@ chartGroup.append("g")
 .call(leftAxis);
 
 chartGroup.append("g")
-attr("transform", `translate(0, ${chartHeight})`)
+.attr("transform", `translate(0, ${chartHeight})`)
 .call(bottomAxis);
 
 // Create one SVG rectangle per piece of data
@@ -75,8 +75,8 @@ chartGroup.selectAll(".bar")
 .append("rect")
 .attr("class", "rect")
 .attr("x", d => xBandScale(d.name))
-.attr("y", d => yLinearScale(volcanosByCountry))
+//.attr("y", d => yLinearScale(volcanosByCountry))
 .attr("width", xBandScale.bandwidth())
-.attr("height", d => chartHeight - yLinearScale(volcanosByCountry));
+//.attr("height", d => chartHeight - yLinearScale(volcanosByCountry));
 
 });
