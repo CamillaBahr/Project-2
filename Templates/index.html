@@ -1,117 +1,115 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>Project -2: Volcanic Eruption-Dashboard</title>
-<style>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-.container {
-  position: relative;
-  width: 50%;
-}
-.image {
-  opacity: 1;
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: .5s ease;
-  backface-visibility: hidden;
-}
-.middle {
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
-}
-.container:hover .image {
-  opacity: 0.2;
-}
-.container:hover .middle {
-  opacity: 0.3;
-}
-.text {
-  background-color:rgb(60, 61, 60);
-  color: white;
-  font-size: 16px;
-  padding: 16px 32px;
-}
-</style>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-crossorigin="anonymous">
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-  <div class="navbar-header">
-  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"aria-expanded="false">
+  <meta charset="UTF-8">
+  <title>Volcano Data Dashboard</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+  <style>
+    body {
+      background-color: black
+    }
+    .container {
+      position: relative;
+      width: 100%;
+    }
+    .image {
+      opacity: 1;
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: .5s ease;
+      backface-visibility: hidden;
+    }
+    .middle {
+      transition: .5s ease;
+      opacity: 0;
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .container:hover .image {
+      opacity: 0.2;
+    }
+    .container:hover .middle {
+      opacity: 0.3;
+    }
+    .text {
+      background-color:rgb(60, 61, 60);
+      color: white;
+      font-size: 16px;
+      padding: 16px 32px;
+    }
+  </style>
+
+  <!-- NAV BAR -->
+  
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
-  </button>
-  <a class="navbar-brand" href="index.html" style="background-color:rgb(12, 12, 11)"><b>Dashboard</b></a>
-  </div>
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
+        </button>
+        <a class="navbar-brand" href="/" style="background-color: rgb(12, 12, 11)"><b>Dashboard</b></a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right" role="navigation">
           <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plots
-          <span class="caret"></span>
-          </a>
-                  <ul class="dropdown-menu">
-                  <li>
-                  <a href="scatterplott.html">Visualization (Scatter Plot)</a>
-                  </li>
-                  <li>
-                  <a href="interactive.html">Interactive (Bar Chart)</a>
-                  </li>                                              
-                                      </ul>
-                                      </li>
-                                      <li>
-                                      <a href="">Mapping</a>
-                                      </li>
-                                  </ul>
-                              </div>                 
-                          </div>
-                          <div class="container">
-                              <div class="col-md-12">
-                                  <div class="sigline">                           
-                                  </div>
-                              </div>
-                          </div>
-                      </nav>
-    <body style="background-color:black;">
-    <div class="container">
-            <center><img src="Hawaii-volcano.jpg" alt="Volcano" class="image" style="width:400px;height:500px;"></center>
-            <div class="middle">
-            <div class="text"><center><h1>Volcanic Eruption</h1></div>
-            <div class="text"><center><p>
-                  Global warming potential (GWP) is a measure of how much heat a greenhouse gas traps in the atmosphere up to a specific time horizon, relative to carbon dioxide. 
-                   It compares the amount of heat trapped by a certain mass of the gas in question to the amount of heat trapped by a similar mass of carbon dioxide and is expressed 
-                   as a factor of carbon dioxide (whose GWP is standardized to 1).
-                   A GWP is calculated over a specific time horizon, commonly 20, 100, or 500 years. User related choices such as the time horizon can greatly 
-                   affect the numerical values obtained for carbon dioxide equivalents. 
-                   In the Fifth Assessment Report of the Intergovernmental Panel on Climate Change, methane has a lifetime of 12.4 years and with climate-carbon feedbacks 
-                   a global warming potential of 86 over 20 years and 
-                   34 over 100 years in response to emissions. For a change in time horizon from 20 to 100 years, the GWP for methane therefore decreases by a factor of approximately 2.5.[1]
-                  
-                    </p></center></div>
-           </div>
-           </div>
-<center><font color="white">---------------------------------------------------------</font></center>
-<center><font color="white">Presented by  </font></center>
-<center><font color="white">Zacharias Girmay </font></center>
-<center><font color="white"> Prakriti Rana </font></center>
-<center><font color="white">Amanda Gaston </font></center>
-<center><font color="white">Camilla Bahr  </font></center>
-<center><font color="white">------------------------------------------------------------</font></center>
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="flase">Plots <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/scatter">Scatter Plot Visualization</a></li>
+              <li><a href="/volcanos_explosive">Interactivate Bar Chart</a></li>
+            </ul>
+          </li>
+          <li><a href="/Mapping">Volcano Map</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"crossorigin="anonymous">
-</script>
+  <!-- CLOSE NAV BAR -->
+
+  <div class="container">
+    <center><img src="static/images/Hawaii-volcano.jpg" alt="Volcano" class="image" style="width:400px;height:500px;"></center>
+    <div class="middle">
+      <div class="text"><center><h1>Volcanic Eruption</h1></div>
+      <div class="text"><center><p>
+        Global warming potential (GWP) is a measure of how much heat a greenhouse gas traps in the atmosphere up to a specific time horizon, relative to carbon dioxide. 
+        It compares the amount of heat trapped by a certain mass of the gas in question to the amount of heat trapped by a similar mass of carbon dioxide and is expressed 
+        as a factor of carbon dioxide (whose GWP is standardized to 1).
+        A GWP is calculated over a specific time horizon, commonly 20, 100, or 500 years. User related choices such as the time horizon can greatly 
+        affect the numerical values obtained for carbon dioxide equivalents. 
+        In the Fifth Assessment Report of the Intergovernmental Panel on Climate Change, methane has a lifetime of 12.4 years and with climate-carbon feedbacks 
+        a global warming potential of 86 over 20 years and 
+        34 over 100 years in response to emissions. For a change in time horizon from 20 to 100 years, the GWP for methane therefore decreases by a factor of approximately 2.5.[1]</p></center>
+      </div>
+    </div>
+  </div>
+  <div class="container"> 
+    <center><font color="white">---------------------------------------------------------</font></center>
+    <center><font color="white">Presented by  </font></center>
+    <center><font color="white">Zacharias Girmay </font></center>
+    <center><font color="white"> Prakriti Rana </font></center>
+    <center><font color="white">Amanda Gaston </font></center>
+    <center><font color="white">Camilla Bahr  </font></center>
+    <center><font color="white">------------------------------------------------------------</font></center>
+    
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </body>
+
 </html>
-</head>
-
-
-

@@ -189,7 +189,7 @@ function createMap(explosivevolcanoes, popvolcanoes) {
   };
 
   // Create our map, giving it the streetmap and earthquakes layers to display on load
-  var myMap = L.map("map", {
+  var myMap = L.map("container", "map", {
     center: [
       18.4521, 1.4097
     ],

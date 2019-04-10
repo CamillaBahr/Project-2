@@ -24,7 +24,7 @@ var svg = d3
 var chartGroup = svg.append("g")
   .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-/ Load data 
+// Load data 
 d3.csv("volcanos.csv", function(error, volcanoData) {
   if (error) return console.warn(error);
 
